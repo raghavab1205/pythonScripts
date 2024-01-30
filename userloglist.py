@@ -12,13 +12,14 @@ def get_event_date(events):
 
 def history(events):
     events.sort(key=get_event_date)
-    l = {"date": {}, "type": {}, "machine": {}, "user": {}}
+    l = {"date": set(), "type": set(), "machine": set(), "user": set()}
     for event in events:
-        l = {"date": event.date, "type": event.type, "machine": event.machine, "user": event.user}
-
-    for i, u in l.items():
-        print(i, u)
-
+        l["date"].add(event.date)
+        l["type"].add(event.type)
+        l["machine"].add(event.machine)
+        l["user"].add(event.user)
+    or i, u in l.items():
+        print(i, ":\t", u)
 
 def current_users(events):
     events.sort(key=get_event_date)
