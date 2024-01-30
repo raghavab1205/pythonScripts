@@ -18,7 +18,7 @@ def history(events):
         l["type"].add(event.type)
         l["machine"].add(event.machine)
         l["user"].add(event.user)
-    or i, u in l.items():
+    for i, u in l.items():
         print(i, ":\t", u)
 
 def current_users(events):
